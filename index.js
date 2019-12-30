@@ -3,7 +3,13 @@ for(var i =0;i<array.length;i++)
 {array[i].addEventListener("click",handleClick);
 }
 function handleClick(){
-  var text=this.innerHTML;
+makesound(this.innerHTML);
+}
+document.addEventListener("keydown",function(event){
+makesound(event.key);
+
+})
+function makesound(text){
   switch (text) {
     case "w":
       var tom1 = new Audio('sounds/tom-1.mp3');
@@ -33,7 +39,7 @@ function handleClick(){
       var kick = new Audio('sounds/kick-bass.mp3');
       kick.play();
       break;
-    default:console.log(this.innerHTM);
+    default:console.log(text);
 
 
   }
