@@ -4,9 +4,12 @@ for(var i =0;i<array.length;i++)
 }
 function handleClick(){
 makesound(this.innerHTML);
+buttonAnimation(this.innerHTML);
 }
 document.addEventListener("keydown",function(event){
 makesound(event.key);
+buttonAnimation(event.key);
+
 
 })
 function makesound(text){
@@ -43,4 +46,9 @@ function makesound(text){
 
 
   }
+}
+function buttonAnimation(key){
+document.querySelector("."+key).classList.add("pressed");
+setTimeout(function(){document.querySelector("."+key).classList.remove("pressed");
+},100);
 }
